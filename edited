@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Task</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+document.getElementById('n5r').innerHTML = $.ajax({
+			type: "GET",
+			url: "task.xml",
+			dataType: "xml",
+			success: function(xml){
+		$(xml).find("next_5_racing").each(function() {
+			var task_title = $(this).find("title").text();
+			var col_1 = $(this).find("col_1").text();
+			var col_2 = $(this).find("col_2").text();
+			var col_3 = $(this).find("col_3").text();
+			var col_4 = $(this).find("col_4").text();
+			var col_5 = $(this).find("col_5").text();
+			var col_6 = $(this).find("col_6").text();
+			var col_7 = $(this).find("col_7").text();
+			var col_8 = $(this).find("col_8").text();
+			var watch = '<img src="images/' + $(this).find("watch").text() + '" width="20" height="20" alt="' + $(this).find("title").text() + '" />';
+
+			var output = "<table border=1><tr>";
+			output	+= '<td width=50 align=center>' + task_title + '</td>';
+			output	+= '<td width=50 align=center><input type=button value=' + col_1 + ' id=HorseRacing onclick=fnCol_1()></td>';
+			output	+= '<td width=50 align=center>' + col_2 + '</td>';
+			output	+= '<td width=50 align=center>' + col_3 + '</td>';
+			output	+= '<td width=50 align=center>' + col_4 + '</td>';
+			output	+= '<td width=50 align=center>' + col_5 + '</td>';
+			output	+= '<td width=50 align=center>' + col_6 + '</td>';
+			output	+= '<td width=50 align=center>' + col_7 + '</td>';
+			output	+= '<td width=50 align=center>' + col_8 + '</td>';
+			output	+= '<td width=50 align=center>' + watch + '</td>';
+			output += '</tr></table>';
+			$("#container").append(output);			
+		});
+	}
+});
+</script>
+<script>
+document.getElementById('sc').innerHTML = $.ajax({
+			type: "GET",
+			url: "task.xml",
+			dataType: "xml",
+			success: function(xml){
+		$(xml).find("saint_cloud").each(function() {
+			var task_title = $(this).find("title").text();
+			var col_1 = $(this).find("col_1").text();
+			var col_2 = $(this).find("col_2").text();
+			var col_3 = $(this).find("col_3").text();
+			var col_4 = $(this).find("col_4").text();
+			var col_5 = $(this).find("col_5").text();
+			var col_6 = $(this).find("col_6").text();
+			var col_7 = $(this).find("col_7").text();
+			var col_8 = $(this).find("col_8").text();
+			var watch = '<img src="images/' + $(this).find("watch").text() + '" width="20" height="20" alt="' + $(this).find("title").text() + '" />';
+
+			var output = "<table border=1><tr>";
+			output	+= '<td width=50 align=center>' + task_title + '</td>';
+			output	+= '<td width=50 align=center><input type=button value=' + col_1 + ' id=HorseRacing onclick=fnCol_1()></td>';
+			output	+= '<td width=50 align=center>' + col_2 + '</td>';
+			output	+= '<td width=50 align=center>' + col_3 + '</td>';
+			output	+= '<td width=50 align=center>' + col_4 + '</td>';
+			output	+= '<td width=50 align=center>' + col_5 + '</td>';
+			output	+= '<td width=50 align=center>' + col_6 + '</td>';
+			output	+= '<td width=50 align=center>' + col_7 + '</td>';
+			output	+= '<td width=50 align=center>' + col_8 + '</td>';
+			output	+= '<td width=50 align=center>' + watch + '</td>';
+			output += '</tr></table>';
+			$("#container").append(output);			
+		});
+	}
+});
+</script>
+<script>
+document.getElementById('vaal').innerHTML = $.ajax({
+			type: "GET",
+			url: "task.xml",
+			dataType: "xml",
+			success: function(xml){
+		$(xml).find("vaal").each(function() {
+			var task_title = $(this).find("title").text();
+			var col_1 = $(this).find("col_1").text();
+			var col_2 = $(this).find("col_2").text();
+			var col_3 = $(this).find("col_3").text();
+			var col_4 = $(this).find("col_4").text();
+			var col_5 = $(this).find("col_5").text();
+			var col_6 = $(this).find("col_6").text();
+			var col_7 = $(this).find("col_7").text();
+			var col_8 = $(this).find("col_8").text();
+			var watch = '<img src="images/' + $(this).find("watch").text() + '" width="20" height="20" alt="' + $(this).find("title").text() + '" />';
+
+			var output = "<table border=1><tr>";
+			output	+= '<td width=50 align=center>' + task_title + '</td>';
+			output	+= '<td width=50 align=center><input type=button value=' + col_1 + ' id=HorseRacing onclick=fnCol_1()></td>';
+			output	+= '<td width=50 align=center>' + col_2 + '</td>';
+			output	+= '<td width=50 align=center>' + col_3 + '</td>';
+			output	+= '<td width=50 align=center>' + col_4 + '</td>';
+			output	+= '<td width=50 align=center>' + col_5 + '</td>';
+			output	+= '<td width=50 align=center>' + col_6 + '</td>';
+			output	+= '<td width=50 align=center>' + col_7 + '</td>';
+			output	+= '<td width=50 align=center>' + col_8 + '</td>';
+			output	+= '<td width=50 align=center>' + watch + '</td>';
+			output += '</tr></table>';
+			$("#container").append(output);			
+		});
+	}
+});
+</script>
+
+</head>
+<body>
+<div id="n5r"></div>
+<div id="sc"></div>
+<div id="vaal"></div>
+<div id="container">
+</div>
+<br>
+<div id="demo"></div>
+
+      <table id="tbody"></table>
+
+</body>
+<script>
+	function fnCol_1(){
+		$.ajax({
+			type: "GET",
+			url: "result.xml",
+			dataType: "xml",
+			success: function(xml){
+		$(xml).find("result").each(function() {
+			var number = $(this).find("number").text();
+			var silks = $(this).find("col_1").text();
+			var horse = $(this).find("horse").text();
+			var three_place = $(this).find("three_place").text();
+			var betting_with = $(this).find("betting_with").text();
+			var previous_win_odd = $(this).find("previous_win_odd").text();
+			var win_or_ew = $(this).find("win_or_ew").text();
+
+
+			var output = "<table border=1><tr>";
+			output	+= '<td width=50 align=center>' + number + '</td>';
+			output	+= '<td width=50 align=center>' + silks + '</td>';
+			output	+= '<td width=50 align=center>' + horse + '</td>';
+			output	+= '<td width=50 align=center>' + three_place + '</td>';
+			output	+= '<td width=50 align=center>' + betting_with + '</td>';
+			output	+= '<td width=50 align=center>' + previous_win_odd + '</td>';
+			output	+= '<td width=50 align=center>' + win_or_ew + '</td>';
+			output += '</tr></table>';
+			$("#demo").append(output);			
+		});
+	}
+});;
+	
+}
+</script>
+<style>
+	#HorseRacing{
+		background: transparent;
+    border: transparent;
+     outline: none;
+	}
+	#HorseRacing:hover{
+		cursor: pointer;
+	}
+</style>
+</html>
